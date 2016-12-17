@@ -14,6 +14,26 @@ if (!isset($GLOBALS['index']))
 	<style type="text/css">.uib-time input{width:50px;}</style>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="stylesheet" href="main.css">
+	<script type="text/javascript">
+function loadXMLDoc()
+{
+	if (window.XMLHttpRequest) // code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	else // code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	xmlhttp.onreadystatechange=function()
+	{
+		if (4==xmlhttp.readyState && 200==xmlhttp.status && ""!=xmlhttp.responseText)
+		{
+			document.write(xmlhttp.responseText);
+			clearInterval(interval);
+		}
+	}
+	xmlhttp.open("GET","http://<?php print $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'&update='.$GLOBALS['tId']; ?>",true);
+	xmlhttp.send();
+}
+var interval = setInterval(loadXMLDoc, 3000);
+</script>
 </head>
 <body>
 	<div class="center-block swipp-container" translate-cloak="">

@@ -2,6 +2,7 @@
 $index = true;
 
 require("get_invoice.php");
+if (isset($_GET['update'])) { require("update.php"); exit; }
 if (!isset($_GET['msisdn'])) { require("pages/need_msisdn.php"); exit; }
 $msisdn = $_GET['msisdn'];
 
