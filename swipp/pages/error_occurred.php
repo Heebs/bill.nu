@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+
+if (!isset($GLOBALS['index']))
+	header("Location: ..");
+
+?><!doctype html>
 <html>
 <head>
 	<title>Bill payment</title>

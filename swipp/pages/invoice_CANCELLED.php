@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+
+if (!isset($GLOBALS['index']))
+	header("Location: ..");
+
+?><!doctype html>
 <html>
 <head>
 	<title>Bill payment</title>
@@ -45,11 +50,11 @@
 				<div ui-view="">
 					<div class="panel-body text-center">
 						<div class="status error"></div>
-						<div style="margin-top: 38px"><small class="faded">Annulleret den 1. Jan 2000 kl. 00:00</small></div>
+						<div style="margin-top: 38px"><small class="faded">Annulleret den <?php print $GLOBALS['s_date']; ?></small></div>
 					</div>
 					<div class="panel-body bg-gray text-center">
 						<strong>Betalingen er annulleret</strong>
-						<p>Beløb: 1,00 kr.</p>
+						<p>Beløb: <?php print $GLOBALS['s_amount']; ?> kr.</p>
 					</div>
 					<div class="panel-body text-center faded">
 					</div>

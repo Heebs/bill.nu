@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+
+if (!isset($GLOBALS['index']))
+	header("Location: ..");
+
+?><!doctype html>
 <html>
 <head>
 	<title>Bill payment</title>
@@ -47,14 +52,14 @@
 				<div ui-view="">
 					<div class="panel-body text-center">
 						<div class="status success" style="margin-top: 11px"></div>
-						<div style="margin-top: 38px"><small class="faded">Betalt den 1. Jan 2000 kl. 00:00</small></div>
+						<div style="margin-top: 38px"><small class="faded">Betalt den <?php print $GLOBALS['s_date']; ?></small></div>
 					</div>
 					<div class="panel-body bg-gray text-center">
 						<strong>Betalingen er gennemført</strong>
-						<p>Beløb: 1,00 kr.</p>
+						<p>Beløb: <?php print $GLOBALS['s_amount']; ?> kr.</p>
 					</div>
 					<div class="panel-body text-center faded">
-						<p># 1234<br />abcdabcdabcdabcd<br />cdefcdefcdefcdef</p>
+						<p># <?php print $GLOBALS['iId'].'<br />'.$GLOBALS['key'].'<br />'.$GLOBALS['hash']; ?></p>
 					</div>
 				</div>
 			</div>

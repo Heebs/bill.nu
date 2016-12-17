@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+
+if (!isset($GLOBALS['index']))
+	header("Location: ..");
+
+?><!doctype html>
 <html>
 <head>
 	<title>Bill payment</title>
@@ -46,12 +51,12 @@
 					<div class="panel-body text-center payment-information">
 						<div>
 							<div class="company-logo center-block" style="background-image: url('https://integration-pay.swipp.dk/images/placeholder-unknown-merchant.a325af99.png')"></div>
-							<div class="amount">1,00 kr.</div>
+							<div class="amount"><?php print $GLOBALS['s_amount']; ?> kr.</div>
 						</div>
 					</div>
 					<form action="" method="get" onSubmit="this.msisdn.value = this.country.value + this.number.value;">
-						<input type="hidden" name="key" value="abcdabcdabcdabcd">
-						<input type="hidden" name="hash" value="cdefcdefcdefcdef">
+						<input type="hidden" name="key" value="<?php print $GLOBALS['key']; ?>">
+						<input type="hidden" name="hash" value="<?php print $GLOBALS['hash']; ?>">
 						<input type="hidden" name="msisdn">
 						<div class="panel-body text-center bg-gray payment-input">
 							<div style="margin-bottom: 8px">Indtast dit mobilnummer</div>

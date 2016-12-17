@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+
+if (!isset($GLOBALS['index']))
+	header("Location: ..");
+
+?><!doctype html>
 <html>
 <head>
 	<title>Bill payment</title>
@@ -57,10 +62,10 @@
 								</div>
 							</spp-spinner>
 						</div>
-						<small class="faded">Sendt til: +4512345678</small>
+						<small class="faded">Sendt til: +<?php print $GLOBALS['msisdn']; ?></small>
 					</div>
 					<div class="panel-body text-center bg-gray">
-						<strong>Beløb: 1,00 kr.</strong>
+						<strong>Beløb: <?php print $GLOBALS['s_amount']; ?> kr.</strong>
 					</div>
 					<div class="panel-body text-center">
 					</div>
