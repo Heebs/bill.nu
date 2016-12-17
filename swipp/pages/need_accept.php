@@ -88,6 +88,7 @@ var interval = setInterval(loadXMLDoc, 3000);
 						<strong>Beløb: <?php print $GLOBALS['s_amount']; ?> kr.</strong>
 					</div>
 					<div class="panel-body text-center">
+						<!--button spp-bailout="" class="spp-btn btn-default">Afbryd</button-->
 					</div>
 				</div>
 			</div>

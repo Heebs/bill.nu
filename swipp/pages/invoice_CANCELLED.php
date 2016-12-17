@@ -57,6 +57,7 @@ if (!isset($GLOBALS['index']))
 						<p>Beløb: <?php print $GLOBALS['s_amount']; ?> kr.</p>
 					</div>
 					<div class="panel-body text-center faded">
+						<?php /*<p># <?php print $GLOBALS['iId'].'<br />'.$GLOBALS['key'].'<br />'.$GLOBALS['hash']; ?></p>*/ ?>
 					</div>
 				</div>
 			</div>

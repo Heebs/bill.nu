@@ -19,6 +19,13 @@ $mId = $request[1];
 $iId = $request[2];
 $tId = $request[3];
 
+$message = $mId.' '.$iId.' '.$tId.' '.$state;
+
+require("sql/connect.php");
+$stmt = mysqli_prepare($mysqli, "INSERT INTO capture VALUES (?)");
+mysqli_stmt_bind_param($stmt, 's', $message);
+mysqli_stmt_execute($stmt);
+
 require("sql/update_state.php");
 
 ?>
