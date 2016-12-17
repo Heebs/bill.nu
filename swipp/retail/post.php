@@ -9,6 +9,9 @@ $request["msisdn"]        = $msisdn;
 $request["paymentAmount"] = $amount;
 $request["currencyCode"]  = "DKK";
 
+$request["callbackUrl"]   = "https://swipp.bill.nu/callback.php/BILL-".$refId;
+$request["callbackOnStates"] = array("CANCELLED", "COMPLETED", "FAILED");
+
 $body = json_encode($request);
 
 $_hash = base64_encode (hash ('sha256', $body, true));
